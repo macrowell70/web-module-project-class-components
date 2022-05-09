@@ -29,9 +29,9 @@ export default class Form extends React.Component {
             value={this.state.itemText}
             onChange={this.changeHandler}
             />
-          <button>Input</button>
-          <button>Hide Completed</button> 
+          <button>Add Item</button>
         </form>
+        <button>Hide Completed</button> 
       </div>
     )
   }

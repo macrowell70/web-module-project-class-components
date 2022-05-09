@@ -3,17 +3,18 @@ import Form from './Form';
 import TodoList from './TodoList';
 
 
-const initialValues = {
+const todos = [{
   name: '',
-  id: '',
+  id: 1234,
   completed: false
-}
+}]
+
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: initialValues
+      todos: todos
     }
   }
 
@@ -26,15 +27,15 @@ export default class App extends React.Component {
     }
 
     this.setState({
-      todo: [...this.state.todo, newItem]
+      todos: [...this.state.todos, newItem]
     })
   }
 
   render() {
     return (
       <div>
+        <TodoList todos={this.state.todos} />
         <Form addItem={this.addItem} />
-        <TodoList todo={this.state.todo} />
       </div>
     )
   }
